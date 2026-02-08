@@ -42,12 +42,12 @@ $npmScripts = (npm run) | Out-String
 
 # si l’app React a été créée avec create-react-app
 if ($npmScripts -match "\sstart\s") {
- Start-Process -FilePath "npm" -ArgumentList "run","start" -RedirectStandardOutput "app.log" -RedirectStandardError "app.err.log"
+ Start-Process -FilePath "npm.cmd" -ArgumentList "run","start" -RedirectStandardOutput "app.log" -RedirectStandardError "app.err.log"
  Write-Host "Started with: npm run start"
 }
 # si l’app React a été créée avec vite
 elseif ($npmScripts -match "\sdev\s") {
- Start-Process -FilePath "npm" -ArgumentList "run","dev","--","--host","0.0.0.0" -RedirectStandardOutput "app.log" -RedirectStandardError "app.err.log"
+ Start-Process -FilePath "npm.cmd" -ArgumentList "run","dev","--","--host","0.0.0.0" -RedirectStandardOutput "app.log" -RedirectStandardError "app.err.log"
  Write-Host "Started with: npm run dev"
 }
 else {
