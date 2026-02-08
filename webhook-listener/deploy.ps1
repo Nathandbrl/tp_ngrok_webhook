@@ -1,3 +1,8 @@
+
+#script pour déployer l'application
+
+
+
 $ErrorActionPreference = "Stop"
 
 if (-not $env:REPO_URL) { throw "Missing REPO_URL" }
